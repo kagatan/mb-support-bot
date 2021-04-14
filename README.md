@@ -1,8 +1,9 @@
 
 
-## Setup
+## MB Support Bot
+Бот предназнчен в помощь операторам тех поддержки когда не совсем удобно заходить в админ панель
 
-###1. Установка
+### 1. Установка
 
 Устанвливаем пакеты и зависимости
 ```shell script
@@ -18,7 +19,7 @@ sudo chmod -R 775 /var/www/mb-support-bot/storage/
 
 ```
 
-###2. Настраиваем .env
+### 2. Настраиваем .env
 Необходимые к заполнению:
 
 ```shell script
@@ -35,7 +36,7 @@ MIKBILL_PASSWORD=admin
 ```
 
 
-###3. Webhook
+### 3. Webhook
 
 Установить webhook
 ```php
@@ -47,7 +48,7 @@ php artisan telebot:webhook --setup
 php artisan telebot:webhook --remove
 ```
 
-###4. Long pooling
+### 4. Long pooling
 
 Запустить в режиме пулинга без вебхука.
 
