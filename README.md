@@ -12,7 +12,7 @@
  - просмотр услуг
  - вход в ЛК 
  
-![png image](https://github.com/[username]/[reponame]/resources/img/image.png?raw=true)
+![png image](https://github.com/kagatan/mb-support-bot/blob/master/resources/img/image.png?raw=true)
 
 ### 1. Установка
 
