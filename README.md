@@ -19,7 +19,44 @@ sudo chmod -R 775 /var/www/mb-support-bot/storage/
 
 ```
 
-### 2. Настраиваем .env
+### 2. Nginx
+
+создаем конфиг на публичную диреторию
+/var/www/mb-support-bot/public
+
+в идеале вынести на отдельный поддомен, и указать его в конфиге APP_URL
+для вебхука телеграма обязателен валидный сертификат
+  
+p.s. необходима если будет использовать вебхук
+
+```shell script
+...
+
+   location ~ /\.git {
+  	    deny all;
+   }
+
+   location / {
+        root   /var/www/mb-support-bot/public;
+        index  index.php;
+        try_files $uri $uri/ /index.php?$args;
+   }
+
+   location ~ \.php$ {
+      include /etc/nginx/fastcgi_params;
+      fastcgi_pass unix:/var/run/php/php7.4-fpm.sock;
+      fastcgi_index index.php;
+      fastcgi_param SCRIPT_FILENAME /var/www/mb-support-bot/public$fastcgi_script_name;
+   }
+
+...
+
+```
+
+### 3. Настраиваем .env
+
+Конфиг находится в корне диреткории ,файл .env
+
 Необходимые к заполнению:
 
 ```shell script
@@ -35,8 +72,7 @@ MIKBILL_PASSWORD=admin
 
 ```
 
-
-### 3. Webhook
+### 4. Webhook
 
 Установить webhook
 ```php
@@ -48,7 +84,7 @@ php artisan telebot:webhook --setup
 php artisan telebot:webhook --remove
 ```
 
-### 4. Long pooling
+### 5. Long pooling
 
 Запустить в режиме пулинга без вебхука.
 
