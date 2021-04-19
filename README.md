@@ -30,7 +30,7 @@ sudo chmod -R 775 /var/www/mb-support-bot/storage/
 
 ```
 
-### 2. Nginx
+### 2. Nginx 
 
 создаем конфиг на публичную диреторию
 /var/www/mb-support-bot/public
@@ -64,6 +64,36 @@ p.s. необходима если будет использовать вебх�
 
 ```
 
+### 2.1 Apache
+
+создаем конфиг на публичную диреторию
+/var/www/mb-support-bot/public
+
+
+пример .htaccess
+```shell script
+
+<IfModule mod_rewrite.c>
+<IfModule mod_negotiation.c>
+    Options -MultiViews
+</IfModule>
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} -d [OR]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ ^$1 [N]
+
+RewriteCond %{REQUEST_URI} (\.\w+$) [NC]
+RewriteRule ^(.*)$ public/$1
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule (.*) index.php
+DirectoryIndex /public/index.php
+</IfModule>
+
+```
 ### 3. Настраиваем .env
 
 Конфиг находится в корне диреткории ,файл .env
