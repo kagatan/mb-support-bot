@@ -33,7 +33,7 @@ class API
                     return $transportClass->searchByField('user', 'user', $value);
                     break;
                 case 'numdogovor':
-                    return $transportClass->searchByField('user', 'numdogovor', $value);
+                    return $transportClass->searchByField('uid', 'numdogovor', $value);
                     break;
             }
         }

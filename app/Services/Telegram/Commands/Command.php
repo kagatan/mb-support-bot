@@ -4,7 +4,7 @@
 namespace App\Services\Telegram\Commands;
 
 
-use App\Services\MikBill\API\API;
+
 use Illuminate\Support\Facades\Cache;
 use WeStacks\TeleBot\Handlers\CommandHandler;
 use WeStacks\TeleBot\Objects\Update;
@@ -21,7 +21,6 @@ abstract class Command extends CommandHandler
 
         $this->check_access();
 
-        var_dump($this->getMenu());
     }
 
 

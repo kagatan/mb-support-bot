@@ -42,11 +42,6 @@ class InputCommand extends Command
         $api = new API();
         $users = $api->searchUsers($this->update->message->text, $type);
 
-//        var_dump($user['state']);
-//        if ($this->update->message->text != 'test') {
-//            $user = [];
-//        }
-
         if (!empty($users)) {
 
             foreach ($users as $user) {
