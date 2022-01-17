@@ -4,8 +4,7 @@
 namespace App\Services\Telegram\Commands;
 
 
-use App\Services\MikBill\API\API;
-use WeStacks\TeleBot\Handlers\CommandHandler;
+use App\Services\MikBill\Admin\API;
 use WeStacks\TeleBot\Objects\Update;
 use WeStacks\TeleBot\TeleBot;
 
@@ -114,7 +113,7 @@ class CallBackCommand extends Command
 
         if (isset($param[1])) {
             $api = new API();
-            $history = $api->getHistorySessions($param[1]);
+            $history = $api->getHistorySessionsMB($param[1]);
 
             $text = "История ceccий: \n\n";
             $text .= "<pre> " . str_pad('Start time', 20) . " | " . str_pad('Stop time', 20) . " | " . str_pad('Time on', 15) . "</pre>\n";
@@ -151,7 +150,7 @@ class CallBackCommand extends Command
 
         if (isset($param[1])) {
             $api = new API();
-            $user = $api->getUser($param[1]);
+            $user = $api->getUserMB($param[1]);
 
             $services = $user['services'];
 
@@ -212,7 +211,7 @@ class CallBackCommand extends Command
 
         if (isset($param[1])) {
             $api = new API();
-            $history = $api->getHistoryPayments($param[1]);
+            $history = $api->getHistoryPaymentsMB($param[1]);
 
             $text = "История платежей: \n\n";
             $text .= "<pre> " . str_pad('Date', 20) . " | " . str_pad('Summa', 10) . " | " . str_pad('Type', 40) . " </pre>\n";

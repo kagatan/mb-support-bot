@@ -2,7 +2,7 @@
 
 namespace App\Services\Telegram\Commands;
 
-use App\Services\MikBill\API\API;
+use App\Services\MikBill\Admin\API;
 use WeStacks\TeleBot\Interfaces\UpdateHandler;
 use WeStacks\TeleBot\Objects\Update;
 use WeStacks\TeleBot\TeleBot;
@@ -18,7 +18,6 @@ class InputCommand extends Command
     {
         $update = $this->update;
         $bot = $this->bot;
-
 
         if ($this->getMenu() == 'menuSearchByLogin') {
             $this->menuSearchUser('login');
@@ -40,14 +39,14 @@ class InputCommand extends Command
 
         // Ищем абона
         $api = new API();
-        $users = $api->searchUsers($this->update->message->text, $type);
+        $users = $api->searchUsersMB($this->update->message->text, $type);
 
         if (!empty($users)) {
 
             foreach ($users as $user) {
 
                 //Получим полную карточку абона
-                $user = $api->getUser($user['useruid']);
+                $user = $api->getUserMB($user['useruid']);
 
                 switch ($user['state']) {
                     case 1:

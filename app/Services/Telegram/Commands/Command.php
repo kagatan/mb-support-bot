@@ -6,6 +6,7 @@ namespace App\Services\Telegram\Commands;
 
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Log;
 use WeStacks\TeleBot\Handlers\CommandHandler;
 use WeStacks\TeleBot\Objects\Update;
 use WeStacks\TeleBot\TeleBot;
@@ -44,13 +45,17 @@ abstract class Command extends CommandHandler
     {
         $allowed_id = config('telebot.bots.bot.allowed_id');
 
+        Log::emergency($allowed_id);
+        Log::emergency($this->update);
         if (isset($this->update->message->from->id)) {
             $this->user_id = $this->update->message->from->id;
         } elseif (isset($this->update->callback_query->from->id)) {
             $this->user_id = $this->update->callback_query->from->id;
         }
+        Log::emergency($this->user_id);
 
         $this->isAuth = in_array($this->user_id, $allowed_id);
+        Log::emergency($this->isAuth);
     }
 
 
