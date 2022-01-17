@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7ab2bb0bdbaa510829d7e13be81803ac",
+    "content-hash": "4d8c8f1c7608e5ff5d9f931ef220d82d",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1023,12 +1023,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kagatan/mb-admin-api.git",
-                "reference": "39570c062294e48511b60ad726b454b8a2751c1b"
+                "reference": "3110aef5dd9f4cdb867591cb0551cff90295fbcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kagatan/mb-admin-api/zipball/39570c062294e48511b60ad726b454b8a2751c1b",
-                "reference": "39570c062294e48511b60ad726b454b8a2751c1b",
+                "url": "https://api.github.com/repos/kagatan/mb-admin-api/zipball/3110aef5dd9f4cdb867591cb0551cff90295fbcc",
+                "reference": "3110aef5dd9f4cdb867591cb0551cff90295fbcc",
                 "shasum": ""
             },
             "require": {
@@ -1066,7 +1066,7 @@
                 "issues": "https://github.com/kagatan/mb-admin-api/issues",
                 "source": "https://github.com/kagatan/mb-admin-api/tree/main"
             },
-            "time": "2022-01-17T13:41:12+00:00"
+            "time": "2022-01-17T14:11:59+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5435,16 +5435,16 @@
         },
         {
             "name": "westacks/telebot",
-            "version": "1.13.0",
+            "version": "1.14.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/westacks/telebot.git",
-                "reference": "9c6a67cf46b0e5bafe9eca9bfe0bb808f867020d"
+                "reference": "ff819db3f34329c752520f9cc146ae039b0f740c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/westacks/telebot/zipball/9c6a67cf46b0e5bafe9eca9bfe0bb808f867020d",
-                "reference": "9c6a67cf46b0e5bafe9eca9bfe0bb808f867020d",
+                "url": "https://api.github.com/repos/westacks/telebot/zipball/ff819db3f34329c752520f9cc146ae039b0f740c",
+                "reference": "ff819db3f34329c752520f9cc146ae039b0f740c",
                 "shasum": ""
             },
             "require": {
@@ -5488,9 +5488,9 @@
             "homepage": "https://github.com/westacks/telebot",
             "support": {
                 "issues": "https://github.com/westacks/telebot/issues",
-                "source": "https://github.com/westacks/telebot/tree/1.13.0"
+                "source": "https://github.com/westacks/telebot/tree/1.14.6"
             },
-            "time": "2021-11-06T07:13:49+00:00"
+            "time": "2022-01-17T14:58:34+00:00"
         }
     ],
     "packages-dev": [

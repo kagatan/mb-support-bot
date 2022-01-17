@@ -12,7 +12,7 @@
         "kagatan/mb-admin-api": "dev-main",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
-        "westacks/telebot": "1.13.0"
+        "westacks/telebot": "^1.14"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
